@@ -49,10 +49,12 @@ import java.util.Map;
 public class QueueDataResource extends DataDelegatingCrudResource<QueueData> {
 
     /**
+     *
      * Gets the delegate object with the given unique id. Implementations may decide whether
      * "unique id" means a uuid, or if they also want to retrieve delegates based on a unique
      * human-readable property.
-     *
+     * @should get the delegate object with the given unique id
+     * @return  null if an object does not exist
      * @param uniqueId
      * @return the delegate for the given uniqueId
      */
@@ -63,10 +65,11 @@ public class QueueDataResource extends DataDelegatingCrudResource<QueueData> {
     }
 
     /**
+     *
      * Void or retire delegate, whichever action is appropriate for the resource type. Subclasses
      * need to override this method, which is called internally by
      * {@link #delete(String, String, org.openmrs.module.webservices.rest.web.RequestContext)}.
-     *
+     * @should void or retire QueueData
      * @param delegate
      * @param reason
      * @param context
@@ -81,7 +84,7 @@ public class QueueDataResource extends DataDelegatingCrudResource<QueueData> {
     /**
      * Purge delegate from persistent storage. Subclasses need to override this method, which is
      * called internally by {@link #purge(String, org.openmrs.module.webservices.rest.web.RequestContext)}.
-     *
+     * @should purge delegate from persistent storage
      * @param delegate
      * @param context
      * @throws org.openmrs.module.webservices.rest.web.response.ResponseException
@@ -94,8 +97,8 @@ public class QueueDataResource extends DataDelegatingCrudResource<QueueData> {
 
     /**
      * Instantiates a new instance of the handled delegate
-     *
-     * @return
+     * @should instantiate a new QueueData
+     * @return QueueData object
      */
     @Override
     public QueueData newDelegate() {
@@ -104,8 +107,8 @@ public class QueueDataResource extends DataDelegatingCrudResource<QueueData> {
 
     /**
      * Writes the delegate to the database
-     *
-     * @return the saved instance
+     * @should save delegate to the database
+     * @return the saved delegate
      */
     @Override
     public QueueData save(final QueueData delegate) {

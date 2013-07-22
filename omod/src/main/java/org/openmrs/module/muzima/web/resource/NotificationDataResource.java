@@ -47,7 +47,7 @@ public class NotificationDataResource extends DataDelegatingCrudResource<Notific
      * Gets the delegate object with the given unique id. Implementations may decide whether
      * "unique id" means a uuid, or if they also want to retrieve delegates based on a unique
      * human-readable property.
-     *
+     * @should get NotificationData with the given id
      * @param uniqueId
      * @return the delegate for the given uniqueId
      */
@@ -61,7 +61,7 @@ public class NotificationDataResource extends DataDelegatingCrudResource<Notific
      * Void or retire delegate, whichever action is appropriate for the resource type. Subclasses
      * need to override this method, which is called internally by
      * {@link #delete(String, String, org.openmrs.module.webservices.rest.web.RequestContext)}.
-     *
+     * @should void or retire NotificationData
      * @param delegate
      * @param reason
      * @param context
@@ -77,7 +77,7 @@ public class NotificationDataResource extends DataDelegatingCrudResource<Notific
     /**
      * Purge delegate from persistent storage. Subclasses need to override this method, which is
      * called internally by {@link #purge(String, org.openmrs.module.webservices.rest.web.RequestContext)}.
-     *
+     * @should purge NotificationData
      * @param delegate
      * @param context
      * @throws org.openmrs.module.webservices.rest.web.response.ResponseException
@@ -90,8 +90,8 @@ public class NotificationDataResource extends DataDelegatingCrudResource<Notific
 
     /**
      * Instantiates a new instance of the handled delegate
-     *
-     * @return
+     * @should instantiate a new NotificationData
+     * @return NotificationData
      */
     @Override
     public NotificationData newDelegate() {
@@ -100,8 +100,8 @@ public class NotificationDataResource extends DataDelegatingCrudResource<Notific
 
     /**
      * Writes the delegate to the database
-     *
-     * @return the saved instance
+     * @should save NotificationData
+     * @return the saved NotificationData
      */
     @Override
     public NotificationData save(final NotificationData delegate) {
