@@ -123,19 +123,22 @@ public abstract class QueueDataResourceTest extends BaseModuleWebContextSensitiv
         return new ObjectMapper().readValue(response.getContentAsString(), SimpleObject.class);
     }
 
-
+    @Test
     public void testGetByUniqueId() throws Exception {
 
     }
 
+    @Test
     public void testDelete() throws Exception {
 
     }
 
+    @Test
     public void testPurge() throws Exception {
 
     }
 
+    @Test
     public void testSave() throws Exception {
 
     }
