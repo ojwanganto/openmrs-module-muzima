@@ -131,8 +131,8 @@ public class NotificationDataResource extends DataDelegatingCrudResource<Notific
             description.addProperty("display", findMethod("getDisplayString"));
             description.addProperty("subject");
             description.addProperty("payload");
-            description.addProperty("forPerson", Representation.DEFAULT);
-            description.addProperty("fromPerson", Representation.DEFAULT);
+            description.addProperty("receiver", Representation.DEFAULT);
+            description.addProperty("sender", Representation.DEFAULT);
             description.addSelfLink();
             return description;
         } else {
@@ -142,8 +142,8 @@ public class NotificationDataResource extends DataDelegatingCrudResource<Notific
 
     public String getDisplayString(final NotificationData message) {
         StringBuilder builder = new StringBuilder();
-        builder.append("from: ").append(message.getSender().getUuid()).append(" - ");
-        builder.append("for: ").append(message.getReceiver().getUuid()).append(" - ");
+        builder.append("sender: ").append(message.getSender().getUuid()).append(" - ");
+        builder.append("receiver: ").append(message.getReceiver().getUuid()).append(" - ");
         builder.append("subject: ").append(message.getSubject());
         return builder.toString();
     }
