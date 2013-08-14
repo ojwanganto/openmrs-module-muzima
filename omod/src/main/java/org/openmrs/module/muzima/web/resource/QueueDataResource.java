@@ -49,11 +49,10 @@ import java.util.Map;
 public class QueueDataResource extends DataDelegatingCrudResource<QueueData> {
 
     /**
-     *
+     * @should get the delegate object with the given unique id
      * Gets the delegate object with the given unique id. Implementations may decide whether
      * "unique id" means a uuid, or if they also want to retrieve delegates based on a unique
      * human-readable property.
-     * @should get the delegate object with the given unique id
      * @return  null if an object does not exist
      * @param uniqueId
      * @return the delegate for the given uniqueId

@@ -35,7 +35,7 @@
 
     <properties>
         <openMRSVersion>1.9.3</openMRSVersion>
-        <webservicesRestVersion>2.1</webservicesRestVersion>
+        <webservicesRestVersion>2.0</webservicesRestVersion>
         <jsonPathVersion>0.8.1</jsonPathVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -58,6 +58,14 @@
                 <artifactId>json-path</artifactId>
                 <version>${jsonPathVersion}</version>
                 <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>webservices.rest-omod-common</artifactId>
+                <version>${webservicesRestVersion}</version>
+                <type>jar</type>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
